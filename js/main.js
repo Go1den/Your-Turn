@@ -23,19 +23,19 @@ function startTimer() {
     let elapsedTime = 0;
     timeOnClock = Number(document.getElementById("inputSecondsPerTurn").value);
     let yellowTime = Number(document.getElementById("inputYellow").value);
-    let warningTime = Number(document.getElementById("inputRed").value);
+    let redTime = Number(document.getElementById("inputRed").value);
     timer = setInterval(function() {
         updateTimeOnScreen(timeOnClock - elapsedTime);
-        if (timeOnClock - elapsedTime < warningTime + ((timeOnClock - warningTime) / 2)) {
+        if (timeOnClock - elapsedTime < yellowTime) {
             document.getElementById("circle").style.stroke = "#ffff00";
         }
-        if (timeOnClock - elapsedTime < warningTime) {
+        if (timeOnClock - elapsedTime < redTime) {
             playWarningSound();
             document.getElementById("circle").style.stroke = "#ff0000";
         }
         if (elapsedTime >= timeOnClock) {
             clearInterval(timer);
-            document.getElementById("textTimeRemaining").textContent = "OVER";
+            document.getElementById("divTimeRemaining").textContent = "OVER";
             stopTimer("#ff0000");
             return;
         }

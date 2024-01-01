@@ -13,13 +13,13 @@
         <div id="divOptions">
             <h1>YOUR TURN</h1>
             <label>Turn length:</label>
-            <input id="inputSecondsPerTurn" size="3" maxlength="3" value="60"/> Seconds
+            <input type="number" min="10" id="inputSecondsPerTurn" size="3" maxlength="3" value="60"/> Seconds
             <br/><br/>
             <label>Turn clock yellow at:</label>
-            <input id="inputYellow" size="3" maxlength="3" value="30"/> Seconds
+            <input type="number" min="5" id="inputYellow" size="3" maxlength="3" value="30"/> Seconds
             <br/><br/>
             <label>Turn clock red at:</label>
-            <input id="inputRed" size="3" maxlength="3" value="15"/> Seconds
+            <input type="number" min="3" id="inputRed" size="3" maxlength="3" value="15"/> Seconds
             <br/><br/>
             <label>Sound alarm in red time?</label>
             <input type="radio" id="radioYes" name="radioRedTime" value="Yes" checked>
