@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Your Turn</title>
+        <meta charset="UTF-8">
+
+        <!-- Style -->
+        <link href="css/main.css" rel="stylesheet">
+
+        <!-- Scripts -->
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <div id="divOptions">
+            <label>Seconds per turn:</label>
+            <input id="inputSecondsPerTurn" size="3" maxlength="3" value="60"/>
+            <br/><br/>
+            <label>Sound warning alarm at:</label>
+            <input id="inputWarning" size="3" maxlength="3" value="15"/> Seconds
+            <br/><br/>
+            <button onclick="startGame()">Begin</button>
+        </div>
+        <div id="divTimer" onclick="restartTimer()" style="display: none;">
+            <svg width="160" height="160">
+                <text id="textTimeRemaining" x="50%" y="50%" text-anchor="middle" dy=".3em">0</text>
+                <circle id="circle" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="12" stroke="#00ff00" fill="none"/>
+            </svg>
+        </div>
+    </body>
+</html>

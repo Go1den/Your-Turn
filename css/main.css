@@ -1,0 +1,14 @@
+text {
+    font-size: 48px;
+    font-family:'Franklin Gothic Medium', bold;
+}
+
+svg {
+    transform: rotate(-90deg);
+}
+
+.circle_animation {
+    stroke-dasharray: 440; /* this value is the pixel circumference of the circle */
+    stroke-dashoffset: 0;
+    transition: all 0.1s linear;
+}

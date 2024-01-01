@@ -1,0 +1,3 @@
+Dynamically generate circle radius, cy, cx values
+Dynamically pick font size to fit inside circle but be very large
+Rotate the timer because it's wrong
