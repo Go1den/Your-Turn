@@ -1,10 +1,25 @@
-text {
+body {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+#divTimeRemaining {
     font-size: 48px;
     font-family:'Franklin Gothic Medium', bold;
+    fill: #ffffff;
+}
+
+div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 svg {
     transform: rotate(-90deg);
+    /* display: block; */
+    /* margin: auto; */
 }
 
 .circle_animation {

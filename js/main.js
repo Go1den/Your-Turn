@@ -7,10 +7,11 @@ function hideOptions() {
 
 function showTimer() {
     document.getElementById("divTimer").style.display = "";
+    document.getElementById("divTimeRemaining").style.display = "";
 }
 
 function updateTimeOnScreen(time) {
-    document.getElementById("textTimeRemaining").textContent = Math.ceil(time);
+    document.getElementById("divTimeRemaining").textContent = Math.ceil(time);
 }
 
 function playWarningSound() {
@@ -21,7 +22,8 @@ function startTimer() {
     let initialOffset = 440;
     let elapsedTime = 0;
     timeOnClock = Number(document.getElementById("inputSecondsPerTurn").value);
-    let warningTime = Number(document.getElementById("inputWarning").value);
+    let yellowTime = Number(document.getElementById("inputYellow").value);
+    let warningTime = Number(document.getElementById("inputRed").value);
     timer = setInterval(function() {
         updateTimeOnScreen(timeOnClock - elapsedTime);
         if (timeOnClock - elapsedTime < warningTime + ((timeOnClock - warningTime) / 2)) {
