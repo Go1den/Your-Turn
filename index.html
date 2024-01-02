@@ -36,13 +36,13 @@
             <button onclick="startGame()">Begin</button>
         </div>        
         <div id="divTimerBG" onclick="restartTimer()" style="display: none;">
-            <svg width="160" height="160">
-                <circle id="circleBG" r="69.85699" cy="81" cx="81" stroke-width="12" stroke="#000000" fill="none"/>
+            <svg id="svgCircleBG">
+                <circle id="circleBG" stroke-width="12" stroke="#000000" fill="none"/>
             </svg>
         </div>
         <div id="divTimerFG" onclick="restartTimer()" style="display: none;">
-            <svg width="160" height="160">
-                <circle id="circleFG" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="12" stroke="#00ff00" fill="none"/>
+            <svg id="svgCircleFG">
+                <circle id="circleFG" class="circle_animation" stroke-width="12" stroke="#00ff00" fill="none"/>
             </svg>
         </div>
 
