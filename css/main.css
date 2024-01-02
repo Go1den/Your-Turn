@@ -3,8 +3,12 @@ body {
     color: #ffffff;
 }
 
+input[type='number']{
+    width: 5em;
+} 
+
 #divTimeRemaining {
-    font-size: 48px;
+    font-size: 64px;
     font-family:'Franklin Gothic Medium', bold;
     fill: #ffffff;
 }

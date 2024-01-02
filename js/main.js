@@ -6,7 +6,8 @@ function hideOptions() {
 }
 
 function showTimer() {
-    document.getElementById("divTimer").style.display = "";
+    document.getElementById("divTimerFG").style.display = "";
+    document.getElementById("divTimerBG").style.display = "";
     document.getElementById("divTimeRemaining").style.display = "";
 }
 
@@ -46,9 +47,9 @@ function startTimer() {
 
 function stopTimer(stroke) {
     clearInterval(timer);
-    document.getElementById("circle").style.strokeDasharray = 440;
-    document.getElementById("circle").style.strokeDashoffset = 0;
-    document.getElementById("circle").style.stroke = stroke;
+    document.getElementById("circleFG").style.strokeDasharray = 440;
+    document.getElementById("circleFG").style.strokeDashoffset = 0;
+    document.getElementById("circleFG").style.stroke = stroke;
 }
 
 function startGame() {

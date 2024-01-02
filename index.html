@@ -13,27 +13,39 @@
         <div id="divOptions">
             <h1>YOUR TURN</h1>
             <label>Turn length:</label>
-            <input type="number" min="10" id="inputSecondsPerTurn" size="3" maxlength="3" value="60"/> Seconds
+            <input type="number" min="10" id="inputSecondsPerTurn" size="3" maxlength="3" size="3" value="60"/> Seconds
             <br/><br/>
             <label>Turn clock yellow at:</label>
             <input type="number" min="5" id="inputYellow" size="3" maxlength="3" value="30"/> Seconds
             <br/><br/>
+            <label>Play warning sound in yellow time?</label>
+            <input type="radio" id="radioYellowYes" name="radioYellowTime" value="Yes" checked>
+            <label for="radioYellowYes">Yes</label>
+            <input type="radio" id="radioYellowNo" name="radioYellowTime" value="No">
+            <label for="radioYellowNo">No</label>
+            <br/><br/>
             <label>Turn clock red at:</label>
             <input type="number" min="3" id="inputRed" size="3" maxlength="3" value="15"/> Seconds
             <br/><br/>
-            <label>Sound alarm in red time?</label>
-            <input type="radio" id="radioYes" name="radioRedTime" value="Yes" checked>
-            <label for="radioYes">Yes</label>
-            <input type="radio" id="radioNo" name="radioRedTime" value="No">
-            <label for="radioNo">No</label>
+            <label>Play warning sound in red time?</label>
+            <input type="radio" id="radioRedYes" name="radioRedTime" value="Yes" checked>
+            <label for="radioRedYes">Yes</label>
+            <input type="radio" id="radioRedNo" name="radioRedTime" value="No">
+            <label for="radioRedNo">No</label>
             <br/><br/>
             <button onclick="startGame()">Begin</button>
-        </div>
-        <div id="divTimer" onclick="restartTimer()" style="display: none;">
+        </div>        
+        <div id="divTimerBG" onclick="restartTimer()" style="display: none;">
             <svg width="160" height="160">
-                <circle id="circle" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="12" stroke="#00ff00" fill="none"/>
+                <circle id="circleBG" r="69.85699" cy="81" cx="81" stroke-width="12" stroke="#000000" fill="none"/>
             </svg>
         </div>
+        <div id="divTimerFG" onclick="restartTimer()" style="display: none;">
+            <svg width="160" height="160">
+                <circle id="circleFG" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="12" stroke="#00ff00" fill="none"/>
+            </svg>
+        </div>
+
         <div id="divTimeRemaining" onclick="restartTimer()" style="display: none;">
             0
         </div>
