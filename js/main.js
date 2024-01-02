@@ -1,6 +1,7 @@
 let timeOnClock;
 let timer;
 let circumference = 0;
+let soundboard = new Soundboard();
 
 function hideOptions() {
     document.getElementById("divOptions").style.display = "none";
@@ -16,29 +17,41 @@ function updateTimeOnScreen(time) {
     document.getElementById("divTimeRemaining").textContent = Math.ceil(time);
 }
 
-function playWarningSound() {
-    return;
-}
-
 function startTimer() {
+    soundboard.playSound("resetSound");
     let elapsedTime = 0;
     timeOnClock = Number(document.getElementById("inputSecondsPerTurn").value);
     let yellowTime = Number(document.getElementById("inputYellow").value);
     let redTime = Number(document.getElementById("inputRed").value);
+    let currentTimeColor = "green";
+    let tickTockTime = 5;
     timer = setInterval(function() {
         updateTimeOnScreen(timeOnClock - elapsedTime);
-        if (timeOnClock - elapsedTime < yellowTime) {
+        console.log(currentTimeColor);
+        if (currentTimeColor == "green" && timeOnClock - elapsedTime < yellowTime) {
             document.getElementById("circleFG").style.stroke = "#ffff00";
+            currentTimeColor = "yellow";
+            if (document.getElementById("radioYellowYes").checked) {
+                soundboard.playSound("warningSound");
+            }
         }
-        if (timeOnClock - elapsedTime < redTime) {
-            playWarningSound();
+        if (currentTimeColor == "yellow" && timeOnClock - elapsedTime < redTime) {
             document.getElementById("circleFG").style.stroke = "#ff0000";
+            currentTimeColor = "red";
+            if (document.getElementById("radioRedYes").checked) {
+                soundboard.playSound("warningSound");
+            }
         }
         if (elapsedTime >= timeOnClock) {
             clearInterval(timer);
             document.getElementById("divTimeRemaining").textContent = "0";
             stopTimer("#ff0000");
+            soundboard.playSound("timesUpSound");
             return;
+        }
+        if (currentTimeColor == "red" && timeOnClock - elapsedTime < tickTockTime && document.getElementById("radioTickTockYes").checked) {
+            soundboard.playSound("runningOutSound");
+            tickTockTime = tickTockTime - 1;
         }
         document.getElementById("circleFG").style.strokeDashoffset = ((elapsedTime+0.1)*(circumference/timeOnClock));
         elapsedTime += .1; //one-tenth of a second

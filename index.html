@@ -7,6 +7,7 @@
         <link href="css/main.css" rel="stylesheet">
 
         <!-- Scripts -->
+        <script src="js/soundboard.js"></script>
         <script src="js/main.js"></script>
     </head>
     <body>
@@ -32,6 +33,12 @@
             <label for="radioRedYes">Yes</label>
             <input type="radio" id="radioRedNo" name="radioRedTime" value="No">
             <label for="radioRedNo">No</label>
+            <br/><br/>
+            <label>Play tick-tock sound for the last 5 seconds?</label>
+            <input type="radio" id="radioTickTockYes" name="radioTickTock" value="Yes" checked>
+            <label for="radioTickTockYes">Yes</label>
+            <input type="radio" id="radioTickTockNo" name="radioTickTock" value="No">
+            <label for="radioTickTockNo">No</label>
             <br/><br/>
             <button onclick="startGame()">Begin</button>
         </div>        
