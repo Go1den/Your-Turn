@@ -28,11 +28,11 @@ function startTimer() {
     timer = setInterval(function() {
         updateTimeOnScreen(timeOnClock - elapsedTime);
         if (timeOnClock - elapsedTime < yellowTime) {
-            document.getElementById("circle").style.stroke = "#ffff00";
+            document.getElementById("circleFG").style.stroke = "#ffff00";
         }
         if (timeOnClock - elapsedTime < redTime) {
             playWarningSound();
-            document.getElementById("circle").style.stroke = "#ff0000";
+            document.getElementById("circleFG").style.stroke = "#ff0000";
         }
         if (elapsedTime >= timeOnClock) {
             clearInterval(timer);
@@ -40,7 +40,7 @@ function startTimer() {
             stopTimer("#ff0000");
             return;
         }
-        document.getElementById("circle").style.strokeDashoffset = ((elapsedTime+0.1)*(initialOffset/timeOnClock));
+        document.getElementById("circleFG").style.strokeDashoffset = ((elapsedTime+0.1)*(initialOffset/timeOnClock));
         elapsedTime += .1; //one-tenth of a second
     }, 100);
 }
